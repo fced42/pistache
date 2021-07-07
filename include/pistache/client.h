@@ -27,7 +27,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace Pistache::Http
+namespace Pistache::Http::Experimental
 {
 
     namespace Default
@@ -132,7 +132,7 @@ namespace Pistache::Http
     public:
         ConnectionPool() = default;
 
-        void init(size_t maxConnsPerHost, size_t maxResponseSize);
+        void init(size_t maxConnectionsPerHost, size_t maxResponseSize);
 
         std::shared_ptr<Connection> pickConnection(const std::string& domain);
         static void releaseConnection(const std::shared_ptr<Connection>& connection);
